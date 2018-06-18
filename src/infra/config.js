@@ -16,13 +16,6 @@ switch (ENV) {
       userService: USER_SERVICE,
     };
     break;
-  case 'test':
-    config = {
-      host: REDIS,
-      port: PORT,
-      userService: USER_SERVICE,
-    };
-    break;
   case 'production':
     config = {
       host: REDIS,
