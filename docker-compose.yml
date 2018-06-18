@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  redis:
+    container_name: redis
+    image: redis:latest
+  partner-gateway-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app  
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    volumes:
+      - '.:/app'  
